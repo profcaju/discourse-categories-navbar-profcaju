@@ -2,13 +2,6 @@
   api.decorateWidget("header-contents:after", (helper) => {
     const showExtraInfo = helper.attrs.topic
     const mobileView = helper.widget.site.mobileView
-
-    if (mobileView) {
-      if (!showExtraInfo) {
-        return helper.attach("custom-categories-navbar");
-      }
-    } else {
-      return helper.attach("custom-categories-navbar");
-    }
+    return helper.attach("custom-categories-navbar");
   });
 </script>
