@@ -18,6 +18,7 @@ export default class CustomCategoriesNavbar extends Component {
     Object.entries(currentRoute.attributes).forEach((keyValuePair) => {
       console.log("  ", ...keyValuePair);
     });
+    console.log("\n");
     if (currentRoute && currentRoute.attributes?.category) {
       let activeCategory = currentRoute.attributes.category;
 
