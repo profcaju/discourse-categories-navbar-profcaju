@@ -21,7 +21,16 @@ export default class CustomCategoriesNavbar extends Component {
     // console.log("\n");
     // console.log("\n");
     if (currentRoute && currentRoute.parent.name == "topic") {
-      //   console.log("entrei num TÓPICO\n");
+      document
+        .querySelector(
+          `a[href*="/c/` +
+            $(".topic-category .badge-wrapper").attr("href") +
+            `"]`
+        )
+        .scrollIntoView({
+          block: "nearest",
+          inline: "center",
+        });
     }
 
     const container = Discourse.__container__;
