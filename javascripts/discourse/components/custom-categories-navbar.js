@@ -15,9 +15,8 @@ export default class CustomCategoriesNavbar extends Component {
 
   setActiveSlug() {
     const currentRoute = this.router.currentRoute;
-
+    console.table(currentRoute);
     if (currentRoute && currentRoute.attributes?.category) {
-      console.log("Route: " + currentRoute.attributes);
       let activeCategory = currentRoute.attributes.category;
 
       if (activeCategory.parentCategory) {
