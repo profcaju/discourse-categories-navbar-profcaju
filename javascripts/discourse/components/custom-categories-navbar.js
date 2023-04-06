@@ -31,7 +31,7 @@ export default class CustomCategoriesNavbar extends Component {
 
     const container = Discourse.__container__;
     const controller = container.lookup("controller:topic");
-    console.log(controller.get("model.category_id"));
+    console.log(controller.get("model.category_slug"));
 
     if (currentRoute && currentRoute.attributes?.category) {
       let activeCategory = currentRoute.attributes.category;
