@@ -1,7 +1,7 @@
 <HorizontalOverflowNav>
   {{#each site.categories as |sc|}}
     {{#unless sc.parentCategory}}
-      <li id="catNav-{{sc.slug}}">
+      <li id="catNav-{{sc.id}}">
         {{category-link
           sc
           extraClasses=(if (eq this.activeSlug sc.slug) "active")
