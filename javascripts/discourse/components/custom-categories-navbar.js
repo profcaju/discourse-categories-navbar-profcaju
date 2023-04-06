@@ -16,12 +16,29 @@ export default class CustomCategoriesNavbar extends Component {
   setActiveSlug() {
     const currentRoute = this.router.currentRoute;
     Object.entries(currentRoute).forEach((keyValuePair) => {
-      console.log("  ", ...keyValuePair);
+      //   console.log("  ", ...keyValuePair);
     });
-    console.log("\n");
-    console.log("\n");
+    // console.log("\n");
+    // console.log("\n");
     if (currentRoute && currentRoute.parent.name == "topic") {
-      //   console.log("entrei num TÓPICO\n");
+      var topicView = require("discourse/views/topic").default;
+
+      topicView.reopen({
+        didInsertElement: function () {
+          this._super();
+          Ember.run.scheduleOnce("afterRender", this, this.afterRenderEvent);
+        },
+
+        afterRenderEvent: function () {
+          //console.dir(this);  //Use this to to get a good overview of what's available
+          console.dir(
+            "Category ID: " +
+              this._controller.model.category.id +
+              " - Category Name: " +
+              this._controller.model.category.name
+          );
+        },
+      });
     }
     if (currentRoute && currentRoute.attributes?.category) {
       let activeCategory = currentRoute.attributes.category;
