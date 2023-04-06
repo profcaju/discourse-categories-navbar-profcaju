@@ -21,7 +21,7 @@ export default class CustomCategoriesNavbar extends Component {
     // console.log("\n");
     // console.log("\n");
     if (currentRoute && currentRoute.parent.name == "topic") {
-      slugParent = $(".topic-category .badge-wrapper").attr("href");
+      let slugParent = $(".topic-category .badge-wrapper").attr("href");
       console.log("estou dentro: " + slugParent);
       document.querySelector(`a[href*="/c/${slugParent}"]`).scrollIntoView({
         block: "nearest",
