@@ -15,19 +15,20 @@ export default class CustomCategoriesNavbar extends Component {
 
   setActiveSlug() {
     const currentRoute = this.router.currentRoute;
-    // Object.entries(currentRoute).forEach((keyValuePair) => {
-    //   //   console.log("  ", ...keyValuePair);
-    // });
-    // // console.log("\n");
-    // // console.log("\n");
-    // if (currentRoute && currentRoute.parent.name == "topic") {
-    //   let slugParent = $(".topic-category .badge-wrapper").attr("href");
-    //   console.log("estou dentro: " + slugParent);
-    //   document.querySelector('a[href*="' + slugParent + '"]').scrollIntoView({
-    //     block: "nearest",
-    //     inline: "center",
-    //   });
-    // }
+
+    if (currentRoute && currentRoute.parent.name == "topic") {
+      //   let slugParent = $(".topic-category .badge-wrapper").attr("href");
+      //   console.log("estou dentro: " + slugParent);
+
+      Object.entries(currentRoute).forEach((keyValuePair) => {
+        console.log("  ", ...keyValuePair);
+      });
+
+      //   document.querySelector('a[href*="' + slugParent + '"]').scrollIntoView({
+      //     block: "nearest",
+      //     inline: "center",
+      //   });
+    }
 
     if (currentRoute && currentRoute.attributes?.category) {
       let activeCategory = currentRoute.attributes.category;
