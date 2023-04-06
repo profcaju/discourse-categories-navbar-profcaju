@@ -16,12 +16,12 @@ export default class CustomCategoriesNavbar extends Component {
   setActiveSlug() {
     const currentRoute = this.router.currentRoute;
     Object.entries(currentRoute).forEach((keyValuePair) => {
-      //   console.log("  ", ...keyValuePair);
+      console.log("  ", ...keyValuePair);
     });
-    // console.log("\n");
-    // console.log("\n");
+    console.log("\n");
+    console.log("\n");
     if (currentRoute && currentRoute.parent.name == "topic") {
-      console.log("entrei num TÓPICO\n");
+      //   console.log("entrei num TÓPICO\n");
     }
     if (currentRoute && currentRoute.attributes?.category) {
       let activeCategory = currentRoute.attributes.category;
